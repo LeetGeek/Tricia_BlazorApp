@@ -1,0 +1,80 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = BlazorApp_Tricia
+build_property.RootNamespace = BlazorApp_Tricia
+build_property.ProjectDir = C:\Users\jjvh8\Source\Repos\BlazorApp_Tricia\BlazorApp_Tricia\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\jjvh8\Source\Repos\BlazorApp_Tricia\BlazorApp_Tricia
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/jjvh8/Source/Repos/BlazorApp_Tricia/BlazorApp_Tricia/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jjvh8/Source/Repos/BlazorApp_Tricia/BlazorApp_Tricia/Pages/Counter.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jjvh8/Source/Repos/BlazorApp_Tricia/BlazorApp_Tricia/Pages/EnterStudentId.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW50ZXJTdHVkZW50SWQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jjvh8/Source/Repos/BlazorApp_Tricia/BlazorApp_Tricia/Pages/FetchData.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmV0Y2hEYXRhLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jjvh8/Source/Repos/BlazorApp_Tricia/BlazorApp_Tricia/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jjvh8/Source/Repos/BlazorApp_Tricia/BlazorApp_Tricia/Pages/QuestionPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUXVlc3Rpb25QYWdlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jjvh8/Source/Repos/BlazorApp_Tricia/BlazorApp_Tricia/Pages/ReadingPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVhZGluZ1BhZ2UucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jjvh8/Source/Repos/BlazorApp_Tricia/BlazorApp_Tricia/Pages/Thankyou.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGhhbmt5b3UucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jjvh8/Source/Repos/BlazorApp_Tricia/BlazorApp_Tricia/Pages/WatchVideo.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV2F0Y2hWaWRlby5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jjvh8/Source/Repos/BlazorApp_Tricia/BlazorApp_Tricia/Shared/SurveyPrompt.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jjvh8/Source/Repos/BlazorApp_Tricia/BlazorApp_Tricia/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jjvh8/Source/Repos/BlazorApp_Tricia/BlazorApp_Tricia/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-490fry9tvl
+
+[C:/Users/jjvh8/Source/Repos/BlazorApp_Tricia/BlazorApp_Tricia/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-caykrk4f0l
+
+[C:/Users/jjvh8/Source/Repos/BlazorApp_Tricia/BlazorApp_Tricia/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jjvh8/Source/Repos/BlazorApp_Tricia/BlazorApp_Tricia/Pages/_Host.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jjvh8/Source/Repos/BlazorApp_Tricia/BlazorApp_Tricia/Pages/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0xheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

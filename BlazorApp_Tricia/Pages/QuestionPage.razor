@@ -1,0 +1,84 @@
+﻿@page "/questionPage/{questionNumber}"
+@using BlazorApp_Tricia.Data
+@inject QuestionProviderService QuestionService
+@inject NavigationManager NavManager
+
+@if(testQuestion == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <p>@testQuestion.Question</p>
+    @if(!string.IsNullOrWhiteSpace(testQuestion.Answer1))
+    {
+        <input type="radio" id="a1" name="fav_language" @onchange="SelectedAnswerChanged" value=@testQuestion.Answer1>
+        <label>@testQuestion.Answer1</label><br>
+    }
+    @if(!string.IsNullOrWhiteSpace(testQuestion.Answer2))
+    {
+        <input type="radio" id="a2" name="fav_language" @onchange="SelectedAnswerChanged" value=@testQuestion.Answer2>
+        <label>@testQuestion.Answer2</label><br>
+    }
+    @if(!string.IsNullOrWhiteSpace(testQuestion.Answer3))
+    {
+        <input type="radio" id="a3" name="fav_language" @onchange="SelectedAnswerChanged" value=@testQuestion.Answer3>
+        <label>@testQuestion.Answer3</label><br>
+    }
+    @if(!string.IsNullOrWhiteSpace(testQuestion.Answer4))
+    {
+        <input type="radio" id="a4" name="fav_language" @onchange="SelectedAnswerChanged" value=@testQuestion.Answer4>
+        <label>@testQuestion.Answer4</label><br>
+    }
+    @if(!string.IsNullOrWhiteSpace(testQuestion.Answer5))
+    {
+        <input type="radio" id="a5" name="fav_language" @onchange="SelectedAnswerChanged" value=@testQuestion.Answer5>
+        <label>@testQuestion.Answer5</label><br>
+    }
+    <br />
+    <label style="padding-right:5px"><b>Selected answer:</b></label><label>@selectedAnswer</label><br>
+
+    <button @onclick="SubmitAnswer">Submit</button>
+}
+
+
+
+
+@code {
+    [Parameter]
+    public string questionNumber { get; set; }
+
+    private TestQuestion testQuestion = null;
+    private TestQuestion[] questions;
+    private int questionIndex = 0;
+    private string selectedAnswer = "";
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        if(!int.TryParse(questionNumber, out questionIndex))
+        {
+
+        }
+        questions = await QuestionService.GetTestQuestions();
+        testQuestion = questions[questionIndex];
+    }
+
+    private void SelectedAnswerChanged(ChangeEventArgs args)
+    {
+        selectedAnswer = args.Value.ToString();
+        StateHasChanged();
+    }
+
+    private void SubmitAnswer()
+    {
+
+        questionIndex++;
+        
+        if(questionIndex < questions.Length)
+            NavManager.NavigateTo($"/questionPage/{questionIndex}", true);
+        else
+            NavManager.NavigateTo($"/thankyou");
+
+    }
+}

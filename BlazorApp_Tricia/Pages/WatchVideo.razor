@@ -1,0 +1,43 @@
+﻿@page "/instructionsPage"
+@inject NavigationManager NavManager
+@implements IDisposable
+
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/OCSbzArwB10" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+@code {
+    private static System.Timers.Timer timer;
+
+    private int totalSeconds = 10 * 1;
+
+    protected override Task OnInitializedAsync()
+    {
+        timer = new System.Timers.Timer(1000);
+        timer.Elapsed += CountDownTimer;
+        timer.Enabled = true;
+
+
+        return base.OnInitializedAsync();
+    }
+
+    public void CountDownTimer(Object source, System.Timers.ElapsedEventArgs e)
+    {
+        if (totalSeconds > 0)
+        {
+            totalSeconds -= 1;
+        }
+        else
+        {
+            timer.Enabled = false;
+            NavManager.NavigateTo("/readingPage");
+        }
+        //InvokeAsync(StateHasChanged); // updates webpage
+    }
+
+    public void Dispose()
+    {
+        timer.Enabled = false;
+        timer.Dispose();
+    }
+}

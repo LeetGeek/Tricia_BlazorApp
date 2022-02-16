@@ -1,0 +1,19 @@
+﻿@page "/"
+@page "/studentid"
+
+@inject NavigationManager NavManager
+
+<label>Student Id:</label>
+
+<input @bind="studentId"/>
+<button @onclick="SubmitId">Submit</button>
+
+@code {
+    private string? studentId{ get; set; }
+
+
+    private void SubmitId()
+    {
+        NavManager.NavigateTo("/instructionsPage");    
+    }
+}
