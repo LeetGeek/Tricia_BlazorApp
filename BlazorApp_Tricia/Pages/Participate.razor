@@ -1,4 +1,5 @@
 ﻿
+@page "/"
 @page "/participate"
 @using BlazorApp_Tricia.Data
 
@@ -9,27 +10,149 @@
 @inject IConfiguration Config
 
 @*left padding*@
-<label>Do you agree to participate in this study?</label>
+@if(!noSelected)
+{
+<div style="text-align: center;"><strong>University of Illinois at Chicago<br>
+Research Information and Consent for Participation in Social, Behavioral, or Educational Research<br>
+2019-0820<br>
+Learning from Text&nbsp;</strong><br>
+&nbsp;</div>
+
+<div><strong>Principal Investigator/Researcher Name and Title:</strong> Tricia Guerrero<br>
+<strong>Faculty Advisor Name and Title:</strong> Jennifer Wiley, PhD<br>
+<strong>Department and Institution:</strong> Psychology, UIC<br>
+<strong>Address and Contact Information:</strong> 1007 W Harrison, Chicago, IL, 60607&nbsp;<br>
+&nbsp;</div>
+
+<div><strong>About this research study </strong><br>
+You are being asked to participate in a research study.&nbsp; Research studies answer important questions that might help change or improve the way we do things in the future.&nbsp; &nbsp; &nbsp;<br>
+&nbsp;</div>
+
+<div><strong>Taking part in this study is voluntary </strong><br>
+Your participation in this research study is voluntary.&nbsp; You may choose to say “no” to this research or may choose to stop participating in the research at any time.&nbsp; Deciding not to participate, or deciding to stop participating later, will not result in the loss of any services, class standing, and/or professional status to which you are entitled, and will not affect your relationship with the University of Illinois at Chicago (UIC) and/or University of Illinois Hospital and Health Sciences System (UI Health), or any of the agencies or organizations collaborating in this research.&nbsp; &nbsp;<br>
+&nbsp;</div>
+
+<div>This consent form will give you information about the research study to help you decide whether you want to participate.&nbsp; Please read this form and ask any questions you have before agreeing to be in the study.&nbsp;</div>
+
+<div>&nbsp;</div>
+
+<div>You are being asked to participate in this research study because you are an undergraduate student currently enrolled at UIC. 5,000 subjects will be enrolled in this research study.&nbsp;&nbsp;</div>
+
+<div><br>
+<strong>Important Information&nbsp; </strong><br>
+The information on the next page gives you an overview of the research.&nbsp; &nbsp;<br></div>
+
+<div>
+<table border="1" cellpadding="1" cellspacing="1" style="width:700px;">
+ <tbody>
+  <tr>
+   <td><strong>WHY IS THIS STUDY BEING DONE? &nbsp;</strong></td>
+   <td>This research examines how different study activities (such as reading and note-taking) impact learning from text.</td>
+  </tr>
+  <tr>
+   <td><strong>WHAT WILL I BE ASKED TO DO DURING THE STUDY?</strong></td>
+   <td>You will be asked to read texts and answer questions about them. You will engage in activities similar to normal studying practices. You may be asked to answer questions out loud or in writing. If you are asked to respond orally, your responses will be audio-recorded. You may also be asked to provide background information so that the nature of the sample that completed this study can be described.&nbsp;</td>
+  </tr>
+  <tr>
+   <td><strong>HOW MUCH TIME WILL I SPEND ON THE STUDY?</strong></td>
+   <td>The time required for the study will match the PECs of the session you signed up for. Studies worth 1 PEC will last 1 hour (2 PEC = 2 hours, .5 PEC = 30 minutes). &nbsp;You will receive .5 PEC for each half hour of participation.&nbsp;</td>
+  </tr>
+  <tr>
+   <td><strong>ARE THERE ANY BENEFITS TO TAKING PART IN THE STUDY?&nbsp;</strong></td>
+   <td>One potential education benefit to participating is that you will&nbsp;experience what it is like to be in a research study in behavioral science, which will complement what you have learned in the PSCH 100 lecture.</td>
+  </tr>
+  <tr>
+   <td><strong>WHAT ARE THE MAIN RISKS OF THE STUDY?&nbsp;</strong></td>
+   <td>When the results of the study are published or discussed in conferences, data will be presented in aggregate, and no one will know that you were in the study. &nbsp;<br />
+   The primary risks presented by this research study are breaches of privacy (other participants in the study may know you were a subject) and/or confidentiality (others may know what you did or said during the study). Online electronic surveys are not 100% secure, and your online privacy can never be fully guaranteed. Privacy and confidentiality will be protected to the extent that it is technologically possible.</td>
+  </tr>
+  <tr>
+   <td><strong>DO I HAVE OTHER OPTIONS BESIDES TAKING PART IN THE STUDY?</strong></td>
+   <td>You may choose to stop participation at any time without any consequences.&nbsp;</td>
+  </tr>
+  <tr>
+   <td><strong>QUESTIONS ABOUT THE STUDY?&nbsp;</strong></td>
+   <td>For questions, concerns, or complaints about the study, please contact Tricia Guerrero (email tguerr9@uic.edu). &nbsp;(Faculty Sponsor: Jennifer Wiley, PhD, jwiley@uic.edu)<br />
+   <br />
+   If you have questions about your rights as a study subject; including questions, concerns, complaints, or if you feel you have not been treated according to the description in this form; or to offer input you may call the UIC Office for the Protection of Research Subjects (OPRS) at 312-996-1711 or 1-866-789-6215 (toll-free) or e-mail OPRS at uicirb@uic.edu. &nbsp;</td>
+  </tr>
+ </tbody>
+</table>
+</div>
+
+<div><u><strong>What about privacy and confidentiality? </strong></u><br>
+Efforts will be made to keep your personal information confidential; however, we cannot guarantee absolute confidentiality.&nbsp; In general, information about you, or provided by you, during the research study, will not be disclosed to others without your written permission.&nbsp; However, laws and state university rules might require us to tell certain people about you.&nbsp; For example, study information which identifies you and the consent form signed by you may be looked at and/or copied for quality assurance and data analysis by:</div>
+
+<div style="margin-left: 40px;">• Representatives of the university committee and office that reviews and approves research studies, the Institutional Review Board (IRB) and Office for the Protection of Research Subjects.<br>
+• Other representatives of the State and University responsible for ethical, regulatory, or financial oversight of research.<br>
+• Government Regulatory Agencies, such as the Office for Human Research Protections (OHRP).&nbsp;</div>
+
+<div>&nbsp;</div>
+
+<div>A possible risk of the study is that your participation in the study or information about you might become known to individuals outside the study.&nbsp; Your responses to test and survey questions will be de-identified using a randomly generated unique number and stored on a secure UIC network computer to prevent access by unauthorized personnel.&nbsp;</div>
+
+<div>&nbsp;</div>
+
+<div>If any audio recordings were collected, they will be destroyed after publication of data.&nbsp;&nbsp;</div>
+
+<div>&nbsp;</div>
+
+<div>When the results of the study are published or discussed in conferences, no one will know that you were in the study. All results will be presented in aggregate during presentations or publications.&nbsp;<br>
+&nbsp;</div>
+
+<div><u><strong>Will I be reimbursed for any of my expenses or paid for my participation in this research? </strong></u><br>
+The time required for the study will match the PECs of the session you signed up for. Studies worth 1 PEC will last 1 hour (2 PEC = 2 hours, .5 PEC = 30 minutes).&nbsp; You will receive .5 PEC for each half hour of participation.&nbsp;<br>
+&nbsp;</div>
+
+<div><u><strong>Can I withdraw or be removed from the study?&nbsp; </strong></u><br>
+If you decide to participate, you have the right to withdraw your consent and leave the study at any time without penalty.&nbsp;&nbsp;</div>
+
+<div>&nbsp;</div>
+
+<div>The researchers and/or funder also have the right to stop your participation in this study without your consent if:</div>
+
+<div style="margin-left: 40px;">• They believe it is in your best interests;<br>
+• You were to object to any future changes that may be made in the study plan.&nbsp;</div>
+
+<div><br>
+If you choose to no longer be in the study and you do not want any of your future information to be used, you must inform the researcher, Tricia Guerrero, in writing at the address on the first page.&nbsp; The researcher, Tricia Guerrero, may still use your information that was collected prior to your written notice.&nbsp;&nbsp;<br>
+<br>
+<u><strong>What if I am a UIC student? &nbsp;</strong></u><br>
+You may choose not to participate or to stop your participation in this research at any time. &nbsp;This will not affect your class standing or grades at UIC. &nbsp;The investigator may also end your participation in the research. &nbsp;If this happens, your class standing or grades will not be affected. &nbsp;You will not be offered or receive any special consideration if you participate in this research.&nbsp;<br>
+<br>
+<u><strong>Remember:</strong></u> &nbsp; &nbsp; &nbsp;<br>
+Your participation in this research is voluntary. &nbsp;Your decision whether or not to participate will not affect your current or future relations with the University. &nbsp;If you decide to participate, you are free to withdraw at any time without affecting that relationship.&nbsp;<br>
+<br>
+<u><strong>Consent of Subject </strong></u>&nbsp;<br>
+I have read the above information. &nbsp;I have been given an opportunity to contact the researchers and ask questions, and my questions have been answered to my satisfaction. &nbsp;I agree to participate in this research. &nbsp;PLEASE PRINT OUT A COPY OF THIS DOCUMENT FOR YOUR RECORDS.&nbsp;<br>
+&nbsp;</div>
+
+<p>Do you agree to participate in the study?</p>
 <div>
     <button @onclick="YesButtonClicked">Yes</button>
     <button @onclick="NoButtonClicked">No</button>
 </div>
+}
+else
+{
+    <p>
+        Be sure to cancel your intent to participate in PECOLSUS or contact the researcher (<a href="tguerr9@uic.edu">tguerr9@uic.edu</a>).
+    </p>
+
+
+}
+
 
 @code {
     private string? studentId{ get; set; }
-
+    private bool noSelected = false;
 
 
 
     protected override async Task OnInitializedAsync()
     {
-        StudentService.Init(Config.GetSection("Info")["ConnectionString"]);
-        WebsiteService.Init(Config.GetSection("Info")["ConnectionString"]);
-
-        var data = WebsiteService.GetWebsiteData();
-        Console.WriteLine(data.Direction0);
-        data.Direction0 += 1;
-        WebsiteService.UpdateWebsiteData(data);
+        //StudentService.Init(Config.GetSection("Info")["ConnectionString"]);
+        //WebsiteService.Init(Config.GetSection("Info")["ConnectionString"]);
     }
 
     private void YesButtonClicked()
@@ -39,6 +162,6 @@
 
     private void NoButtonClicked()
     {
-        NavManager.NavigateTo("/thankyou");    
+        noSelected = true;   
     }
 }

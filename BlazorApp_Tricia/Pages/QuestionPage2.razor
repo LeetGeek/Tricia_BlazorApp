@@ -1,0 +1,100 @@
+﻿@page "/questionPage2/{questionNumberString}"
+@using BlazorApp_Tricia.Data
+@inject QuestionService QuestionService
+@inject NavigationManager NavManager
+@inject StudentService StudentService
+@inject IJSRuntime JsRuntime
+
+@if(questions == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    var questionId = 0;
+    @foreach(var question in questions)
+    {
+        var anwserIndex = 0;
+        var anwserId = $"A{anwserIndex}";
+        
+        <div>
+            <p>@question.QuestionText</p>
+            <div>
+                <fieldset>
+                @foreach(var answer in @question.Answers)
+                {
+                    <input type="radio" name="@question.QuestionId" @onchange="args=>SelectedAnswerChanged(question,args)" value="@answer" />
+                    <label>@answer</label>
+                    <br>
+                }
+                </fieldset>
+            </div>
+        </div>
+        <br>
+    }
+    <button @onclick="OnNext">Next</button>
+}
+
+
+
+
+@code {
+    [Parameter]
+    public string questionNumberString { get; set; }
+    private int questionNumber;
+
+    private System.Diagnostics.Stopwatch stopwatch;
+
+    private Student student;
+    private IEnumerable<Question> questions;
+
+    protected override async Task OnInitializedAsync()
+    {
+        //Logger.LogDebug(questionNumber);
+        stopwatch = new System.Diagnostics.Stopwatch();
+        stopwatch.Start();
+
+        questionNumber = int.Parse(questionNumberString);
+
+        student = StudentService.GetTargetStudent();
+        questions = QuestionService.Questions.Skip(questionNumber*5).Take(5);
+
+    }
+
+    private void SelectedAnswerChanged(Question q, ChangeEventArgs args)
+    {
+        var selectedAnswer = args.Value.ToString();
+        student.Answers[q.QuestionId] = (q.Answers.ToList().IndexOf(selectedAnswer) + 1).ToString();
+
+        //StateHasChanged();
+    }
+
+    private async void OnNext()
+    {
+        if(student.Answers.Keys.Count < (questionNumber+1)*5)
+        {
+            await JsRuntime.InvokeVoidAsync("alert", "Please ensure that you have answered all of the questions before proceeding.");
+            return;
+        }
+
+
+        var totalMilliseconds = stopwatch.Elapsed.TotalMilliseconds;
+        student.Stats[$"questionSetTime{questionNumber + 1}"] = totalMilliseconds;
+        StudentService.SaveStudent(student);
+
+        if(questionNumber == 2)
+        {
+            NavManager.NavigateTo("/thankyou");  
+        }
+        else
+        {
+
+            questionNumber++;
+            //questions = QuestionService.Questions.Skip(questionNumber*5).Take(5);
+            //InvokeAsync(StateHasChanged);
+            NavManager.NavigateTo($"/questionPage2/{questionNumber}",true);
+        }
+
+        
+    }
+}

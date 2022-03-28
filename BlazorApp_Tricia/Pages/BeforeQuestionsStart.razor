@@ -1,0 +1,30 @@
+﻿
+@page "/BeforeQuestionsStart"
+@using BlazorApp_Tricia.Data
+
+@inject NavigationManager NavManager
+@inject StudentService StudentService
+@inject IJSRuntime JsRuntime
+
+@*left padding*@
+<p>You will now answer some questions to assess your understanding of the text. Please answer each question to the best of your ability. </p>
+<br />
+<button @onclick="OnNext">Next</button>
+
+
+
+@code {
+    private string? studentId{ get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        //Console.WriteLine(MyService.id);
+        //Console.WriteLine(); 
+    }
+
+    private async void OnNext()
+    {
+
+        NavManager.NavigateTo("/paragraphResponse"); 
+    }
+}

@@ -1,66 +1,55 @@
-﻿@page "/readingPage"
-
+﻿@page "/paragraphResponse"
+@using BlazorApp_Tricia.Data
+@inject WebsiteService WebsiteService
 @inject NavigationManager NavManager
 @inject StudentService StudentService
-@inject WebsiteService WebsiteService
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-    }
-    .imgbox {
-        display: grid;
-        height: 100%;
-    }
-    .center-fit {
-        max-width: 100%;
-        max-height: 100vh;
-        margin: auto;
-    }
-</style>
+@inject IJSRuntime JsRuntime
 
-@if (string.IsNullOrWhiteSpace(timeDisplay))
-{
-    <label>Loading...</label>
-}
-else
-{
+
+   
     <div style="text-align: center;">
         <span><label>Remaining Time: </label> @timeDisplay</span>
     </div>
+    <br />
+
+    <p>In a standard 5 paragraph essay, please answer the following prompt:</p>
+    <p>Explain how alcohol is produced in alcoholic beverages and the factors that may alter the amount of alcohol produced.</p>
+    <br />
+    <textarea name="paragraph_text" cols="200" rows="30" @bind="@responseText" @bind:event="oninput"></textarea>
+
+    @*<button @onclick="OnNext">Next</button>*@
 
 
-    <div class="imgbox">
-        <img class="center-fit" src="img/Ferment_Textbook image.jpg">
-    </div> 
-}
+
 
 
 @code {
+
     private static System.Timers.Timer timer;
 
     private string timeDisplay = "";
 
     private int minutes = 0;
-    private int seconds = 0;
+    private int seconds = 20;
     private int totalSeconds;
 
-    protected override Task OnInitializedAsync()
-    {
-        var data = WebsiteService.GetWebsiteData();
-        var tokens = data.ReadingPaneTotalTime.Split(new char[] { ':' });
-        minutes = int.Parse(tokens[0]);
-        seconds = int.Parse(tokens[1]);
-        
+    private string responseText;
 
+    private Student student;
+
+    protected override async Task OnInitializedAsync()
+    {
         totalSeconds = minutes * 60 + seconds;
 
         timer = new System.Timers.Timer(1000);
         timer.Elapsed += CountDownTimer;
         timer.Enabled = true;
 
-        return base.OnInitializedAsync();
+        student = StudentService.GetTargetStudent();
+
+
     }
+
 
     public void CountDownTimer(Object source, System.Timers.ElapsedEventArgs e)
     {
@@ -72,7 +61,11 @@ else
         else
         {
             timer.Enabled = false;
-            NavManager.NavigateTo("/BeforeQuestionsStart");
+            student.ParagraphResponse = responseText;
+            StudentService.SaveStudent(student);
+           
+
+            NavManager.NavigateTo("/questionPage2/0");
         }
         InvokeAsync(StateHasChanged); // updates webpage
     }

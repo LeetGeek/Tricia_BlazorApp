@@ -13,6 +13,7 @@ builder.Services.AddSingleton<WeatherForecastService>();
 builder.Services.AddSingleton<QuestionProviderService>();
 builder.Services.AddSingleton<StudentService>();
 builder.Services.AddSingleton<WebsiteService>();
+builder.Services.AddSingleton<QuestionService>();
 //builder.Services.AddSingleton<>
 var app = builder.Build();
 
@@ -30,7 +31,15 @@ app.UseRouting();
 app.MapBlazorHub();
 app.MapFallbackToPage("/_Host");
 
+var connectionString = builder.Configuration.GetSection("Info")["ConnectionString"];
+Console.WriteLine(connectionString);
+var websiteService = app.Services.GetService<WebsiteService>();
+var studentService = app.Services.GetService<StudentService>();
+var questionService = app.Services.GetService<QuestionService>();
 
+websiteService?.Init(connectionString);
+studentService?.Init(connectionString);
+questionService.Load("./data/Questions.json");
 app.Run();
 
 

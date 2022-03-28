@@ -27,7 +27,7 @@
     {
         if(string.IsNullOrWhiteSpace(studentId))
         {
-            await JsRuntime.InvokeVoidAsync("alert", "Student Id cannont be blank!");
+            await JsRuntime.InvokeVoidAsync("alert", "You have entered an invalid PIN. Please double-check your PIN before proceeding.");
             return;
         }
 
@@ -39,5 +39,7 @@
 
 
         NavManager.NavigateTo("/instructionsPage"); 
+        //NavManager.NavigateTo("/questionPage2/0"); 
+        //NavManager.NavigateTo("/paragraphResponse"); 
     }
 }

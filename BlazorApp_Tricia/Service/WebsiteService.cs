@@ -55,5 +55,9 @@ namespace BlazorApp_Tricia.Service
         public int Direction0 { get; set; }
         public int Direction1 { get; set; }
         public int Direction2 { get; set; }
+        public int NextDirection { get; set; }
+
+        public string ReadingPaneTotalTime { get; set; }
+        public string ParagraphTotalTime { get; set; }
     }
 }

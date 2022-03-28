@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "markv9FoLwzL3mixMo7pnhfPYJieSBuupQQdTOucB1w=",
+  "Hash": "wsJScdiWBIJYfcGJxB+zPMB2Jo+WR32N//qo/zmE4SQ=",
   "Source": "BlazorApp_Tricia",
   "BasePath": "_content/BlazorApp_Tricia",
   "Mode": "Default",
@@ -253,6 +253,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "C:\\Users\\jjvh8\\Source\\Repos\\BlazorApp_Tricia\\BlazorApp_Tricia\\wwwroot\\data\\Questions.json",
+      "SourceId": "BlazorApp_Tricia",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jjvh8\\Source\\Repos\\BlazorApp_Tricia\\BlazorApp_Tricia\\wwwroot\\",
+      "BasePath": "_content/BlazorApp_Tricia",
+      "RelativePath": "data/Questions.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\data\\Questions.json"
     },
     {
       "Identity": "C:\\Users\\jjvh8\\Source\\Repos\\BlazorApp_Tricia\\BlazorApp_Tricia\\wwwroot\\favicon.ico",
