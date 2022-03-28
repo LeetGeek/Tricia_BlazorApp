@@ -4,6 +4,7 @@
     {
         public Task<TestQuestion[]> GetTestQuestions()
         {
+            var list = new List<string>();
             return Task.FromResult(new TestQuestion[2]
             {
                 new TestQuestion()

@@ -35,12 +35,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/jjvh8/Source/Repos/BlazorApp_Tricia/BlazorApp_Tricia/Pages/InstructionPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5zdHJ1Y3Rpb25QYWdlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jjvh8/Source/Repos/BlazorApp_Tricia/BlazorApp_Tricia/Pages/Participate.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFydGljaXBhdGUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/jjvh8/Source/Repos/BlazorApp_Tricia/BlazorApp_Tricia/Pages/QuestionPage.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUXVlc3Rpb25QYWdlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/jjvh8/Source/Repos/BlazorApp_Tricia/BlazorApp_Tricia/Pages/ReadingPage.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVhZGluZ1BhZ2UucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jjvh8/Source/Repos/BlazorApp_Tricia/BlazorApp_Tricia/Pages/StartingPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3RhcnRpbmdQYWdlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/jjvh8/Source/Repos/BlazorApp_Tricia/BlazorApp_Tricia/Pages/Thankyou.razor]

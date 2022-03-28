@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "4BwYPQrw6j3AYC3Gu1f2PGB8WeBTYAV+Y4/d8fO6ZnQ=",
+  "Hash": "0Gdaj6Ndmb1bOIqlXvb+U64L6qPhu7fL48qpAmkcuVY=",
   "Source": "BlazorApp_Tricia",
   "BasePath": "_content/BlazorApp_Tricia",
   "Mode": "Default",
@@ -270,6 +270,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\jjvh8\\Source\\Repos\\BlazorApp_Tricia\\BlazorApp_Tricia\\wwwroot\\img\\Ferment_Textbook image.jpg",
+      "SourceId": "BlazorApp_Tricia",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jjvh8\\Source\\Repos\\BlazorApp_Tricia\\BlazorApp_Tricia\\wwwroot\\",
+      "BasePath": "_content/BlazorApp_Tricia",
+      "RelativePath": "img/Ferment_Textbook image.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Ferment_Textbook image.jpg"
     },
     {
       "Identity": "C:\\Users\\jjvh8\\Source\\Repos\\BlazorApp_Tricia\\BlazorApp_Tricia\\wwwroot\\img\\text1.png",

@@ -1,10 +1,16 @@
-﻿@page "/instructionsPage"
+﻿@page "/instructionsPage2"
 @inject NavigationManager NavManager
 @implements IDisposable
 
 
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/OCSbzArwB10" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="d-flex justify-content-center"> 
+    <iframe 
+    width="700" height="400" 
+    src="https://www.youtube.com/embed/OCSbzArwB10" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen></iframe>
+</div>
 
 @code {
     private static System.Timers.Timer timer;
@@ -13,9 +19,14 @@
 
     protected override Task OnInitializedAsync()
     {
+        //NavManager.NavigateTo("/readingPage");
+
         timer = new System.Timers.Timer(1000);
         timer.Elapsed += CountDownTimer;
         timer.Enabled = true;
+
+        
+         
 
 
         return base.OnInitializedAsync();

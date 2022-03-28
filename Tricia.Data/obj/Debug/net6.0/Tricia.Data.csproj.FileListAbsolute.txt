@@ -1,0 +1,12 @@
+C:\Users\jjvh8\Source\Repos\BlazorApp_Tricia\Tricia.Data\bin\Debug\net6.0\Tricia.Data.deps.json
+C:\Users\jjvh8\Source\Repos\BlazorApp_Tricia\Tricia.Data\bin\Debug\net6.0\Tricia.Data.dll
+C:\Users\jjvh8\Source\Repos\BlazorApp_Tricia\Tricia.Data\bin\Debug\net6.0\ref\Tricia.Data.dll
+C:\Users\jjvh8\Source\Repos\BlazorApp_Tricia\Tricia.Data\bin\Debug\net6.0\Tricia.Data.pdb
+C:\Users\jjvh8\Source\Repos\BlazorApp_Tricia\Tricia.Data\obj\Debug\net6.0\Tricia.Data.csproj.AssemblyReference.cache
+C:\Users\jjvh8\Source\Repos\BlazorApp_Tricia\Tricia.Data\obj\Debug\net6.0\Tricia.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jjvh8\Source\Repos\BlazorApp_Tricia\Tricia.Data\obj\Debug\net6.0\Tricia.Data.AssemblyInfoInputs.cache
+C:\Users\jjvh8\Source\Repos\BlazorApp_Tricia\Tricia.Data\obj\Debug\net6.0\Tricia.Data.AssemblyInfo.cs
+C:\Users\jjvh8\Source\Repos\BlazorApp_Tricia\Tricia.Data\obj\Debug\net6.0\Tricia.Data.csproj.CoreCompileInputs.cache
+C:\Users\jjvh8\Source\Repos\BlazorApp_Tricia\Tricia.Data\obj\Debug\net6.0\Tricia.Data.dll
+C:\Users\jjvh8\Source\Repos\BlazorApp_Tricia\Tricia.Data\obj\Debug\net6.0\ref\Tricia.Data.dll
+C:\Users\jjvh8\Source\Repos\BlazorApp_Tricia\Tricia.Data\obj\Debug\net6.0\Tricia.Data.pdb

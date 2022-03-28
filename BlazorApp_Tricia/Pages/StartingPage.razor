@@ -1,0 +1,22 @@
+﻿
+@page "/"
+@using BlazorApp_Tricia.Data
+
+
+@inject NavigationManager NavManager
+@inject StudentService StudentService
+@inject WebsiteService WebsiteService
+@inject IConfiguration Config
+
+
+
+@code {
+   
+    protected override async Task OnInitializedAsync()
+    {
+       
+
+       NavManager.NavigateTo("/participate");  
+    }
+
+}

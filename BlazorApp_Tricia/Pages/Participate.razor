@@ -1,0 +1,44 @@
+﻿
+@page "/participate"
+@using BlazorApp_Tricia.Data
+
+
+@inject NavigationManager NavManager
+@inject StudentService StudentService
+@inject WebsiteService WebsiteService
+@inject IConfiguration Config
+
+@*left padding*@
+<label>Do you agree to participate in this study?</label>
+<div>
+    <button @onclick="YesButtonClicked">Yes</button>
+    <button @onclick="NoButtonClicked">No</button>
+</div>
+
+@code {
+    private string? studentId{ get; set; }
+
+
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        StudentService.Init(Config.GetSection("Info")["ConnectionString"]);
+        WebsiteService.Init(Config.GetSection("Info")["ConnectionString"]);
+
+        var data = WebsiteService.GetWebsiteData();
+        Console.WriteLine(data.Direction0);
+        data.Direction0 += 1;
+        WebsiteService.UpdateWebsiteData(data);
+    }
+
+    private void YesButtonClicked()
+    {
+        NavManager.NavigateTo("/studentid");    
+    }
+
+    private void NoButtonClicked()
+    {
+        NavManager.NavigateTo("/thankyou");    
+    }
+}

@@ -1,19 +1,43 @@
-﻿@page "/"
+﻿
 @page "/studentid"
+@using BlazorApp_Tricia.Data
 
 @inject NavigationManager NavManager
+@inject StudentService StudentService
+@inject IJSRuntime JsRuntime
 
-<label>Student Id:</label>
+@*left padding*@
+<label>     PIN:</label>
 
 <input @bind="studentId"/>
 <button @onclick="SubmitId">Submit</button>
 
+
+
 @code {
     private string? studentId{ get; set; }
 
-
-    private void SubmitId()
+    protected override async Task OnInitializedAsync()
     {
-        NavManager.NavigateTo("/instructionsPage");    
+        //Console.WriteLine(MyService.id);
+        //Console.WriteLine(); 
+    }
+
+    private async void SubmitId()
+    {
+        if(string.IsNullOrWhiteSpace(studentId))
+        {
+            await JsRuntime.InvokeVoidAsync("alert", "Student Id cannont be blank!");
+            return;
+        }
+
+        StudentService.LoadTargetStudent(studentId);
+        if(StudentService.GetTargetStudent() == null)
+        {
+            StudentService.CreateStudent(studentId);
+        }
+
+
+        NavManager.NavigateTo("/instructionsPage"); 
     }
 }
