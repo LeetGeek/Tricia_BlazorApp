@@ -1,0 +1,62 @@
+﻿@page "/instructionForRealTextPage"
+@using BlazorApp_Tricia.Data
+
+@inject NavigationManager NavManager
+@inject StudentService StudentService
+@inject IJSRuntime JsRuntime
+
+
+<div style="margin-left:50px; margin-right:50px">
+
+
+   
+    <p>Those were the example text and questions to introduce you to the types of questions you will see on the test.</p>
+    <p>You will now see the actual text. You will have 12 minutes to read and study the text. You must use the entire time to do so.</p>
+    <p>When you are ready to begin, click the next button.</p>
+    
+    
+
+    
+
+    @if(totalSeconds <= 0)
+    {
+        <button @onclick="OnNextClicked">Next</button>
+    }
+    
+    
+</div>
+
+@code {
+    private static System.Timers.Timer timer;
+
+    private int? directions = null;
+    private Student student;
+    private int totalSeconds = 5;
+
+    protected override async Task OnInitializedAsync()
+    {
+        student = StudentService.GetTargetStudent();
+        directions = student.Directions;
+
+        timer = new System.Timers.Timer(1000);
+        timer.Elapsed += CountDownTimer;
+        timer.Enabled = true;
+
+    }
+
+    private async void OnNextClicked()
+    {
+        NavManager.NavigateTo("/readingPage");
+    }
+
+    public void CountDownTimer(Object source, System.Timers.ElapsedEventArgs e)
+    {
+        totalSeconds--;
+        if(totalSeconds <= 0)
+        {
+            timer.Enabled = false;
+            timer.Dispose();
+        }
+        InvokeAsync(StateHasChanged); // updates webpage
+    }
+}
