@@ -1,0 +1,46 @@
+[
+  {
+    "QuestionId": "EX.RWT1",
+    "QuestionText": "Using the process of echolocation, how does the bat determine that the insect is moving towards it?",
+    "Answers": [
+      "The intensity of the sound wave will decrease.",
+      "The intensity of the sounds wave will increase.",
+      "The time it takes the echo to return from ear to ear will get steadily longer from echo to echo.",
+      "The time it takes the echo to return from ear to ear will get steadily shorter from echo to echo."
+    ],
+    "CorrectAnswerId": 4
+  },
+  {
+    "QuestionId": "EX.RWT2",
+    "QuestionText": "What is the difference in muscle contractions in humans and bats?",
+    "Answers": [
+      "In humans, muscle contractions are intentional, whereas in bats they are automatic.",
+      "In humans, activating muscles results in contracting tendons, whereas in bats, it results in relaxing them.",
+      "In humans, some muscles are relaxed during sleep, whereas in bats, muscles are always activated.",
+      "In humans, muscles cannot cause them to get off the ground, whereas bats can use their muscles to get off of the ground."
+    ],
+    "CorrectAnswerId": 2
+  },
+  {
+    "QuestionId": "EX.RBT1",
+    "QuestionText": "Imagine that a bat is hunting a cluster of grasshoppers at night. How would they isolate the slowest and smallest grasshopper?",
+    "Answers": [
+      "A smaller object will reflect less of the soundwave, so they will search for the smallest one.",
+      "The smallest grasshopper would run the slowest, so they use echolocation to determine where it is.",
+      "They would compare the sizes and lengths of the sound waves looking for the shortest and least intense wave.",
+      "They would rely on instincts and look for the insect at the back of the cluster."
+    ],
+    "CorrectAnswerId": 3
+  },
+  {
+    "QuestionId": "EX.RBT2",
+    "QuestionText": "Suppose a bat dies while it is sleeping. What will happen if it dies while hanging upside down?",
+    "Answers": [
+      "It will collapse and fall to the ground when it dies.",
+      "Like human fingers, bats will relax their muscles and let go of the surface. ",
+      "Their muscles will get stiff from rigor mortis causing them to remain in place.",
+      "Gravity will pull on the bat’s body, keeping the talons closed, and it will remain upside down."
+    ],
+    "CorrectAnswerId": 4
+  }
+]

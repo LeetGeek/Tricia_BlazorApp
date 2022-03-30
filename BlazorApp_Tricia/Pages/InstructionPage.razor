@@ -1,50 +1,83 @@
-﻿
-@page "/instructionsPage"
+﻿@page "/instructionsPage"
 @using BlazorApp_Tricia.Data
 
 @inject NavigationManager NavManager
 @inject StudentService StudentService
 @inject IJSRuntime JsRuntime
 
-@if(directions == null)
-{
-    
-}
-else if(directions == 0)
-{
-    <p>In this study, you will be reading a text, and then taking a test to see how well you actually do.</p>
-}
-else if(directions == 1)
-{
-    <p>In this study, you will be reading a text, and then taking a test to see how well you actually do.</p>
-    <p>The literature suggests that people study differently depending on the kind of test they expect. You will be taking tests that assess your ability to make connections between the different parts of a text (i.e., link the parts of the text).</p>
-    <p>To do this, you will have to think about how different pieces of information in the text may be linked together in new ways.</p>
-    <p>The first text is provided to give you practice with these kinds of tests. </p>
-}
-else if(directions == 2)
-{
-    <p>In this study, you will be reading a text, and then taking a test to see how well you actually do.</p>
-    <p>The literature suggests that people study differently depending on the kind of test they expect. You will be taking tests that assess your ability apply to engage in hypothetical thinking. That is, to apply the information from the text to new situations or to take the information from the text and manipulate it in some way.</p>
-    <p>To do this, you will have to think about how different pieces of information in the text may be linked together in new ways.</p>
-    <p>The answers are not going to be found in the text, but all the necessary pieces of information to infer the answer is available in the text.</p>
-    <p>The first text is provided to give you practice with these kinds of tests.</p>
-}
 
-<button @onclick="OnNextClicked">Next</button>
+<div style="margin-left:50px; margin-right:50px">
+
+
+    @if (directions == null)
+    {
+
+    }
+    else if (directions == 0)
+    {
+        <p>In this study, you will be reading a text, and then taking a test to see how well you actually do.</p>
+    }
+    else if (directions == 1)
+    {
+        <p>In this study, you will be reading a text, and then taking a test to see how well you actually do.</p>
+        <p>The literature suggests that people study differently depending on the kind of test they expect. You will be taking tests that assess your ability to make connections between the different parts of a text (i.e., link the parts of the text).</p>
+        <p>To do this, you will have to think about how different pieces of information in the text may be linked together in new ways.</p>
+        <p>The first text is provided to give you practice with these kinds of tests. </p>
+    }
+    else if (directions == 2)
+    {
+        <p>In this study, you will be reading a text, and then taking a test to see how well you actually do.</p>
+        <p>The literature suggests that people study differently depending on the kind of test they expect. You will be taking tests that assess your ability apply to engage in hypothetical thinking. That is, to apply the information from the text to new situations or to take the information from the text and manipulate it in some way.</p>
+        <p>To do this, you will have to think about how different pieces of information in the text may be linked together in new ways.</p>
+        <p>The answers are not going to be found in the text, but all the necessary pieces of information to infer the answer is available in the text.</p>
+        <p>The first text is provided to give you practice with these kinds of tests.</p>
+    }
+
+     <br />
+     <p>Click next when you have read and understood these instructions.</p>
+
+    @if(totalSeconds <= 0)
+    {
+        <button @onclick="OnNextClicked">Next</button>
+    }
+    
+    
+</div>
 
 @code {
-    
-    
+    private static System.Timers.Timer timer;
+
     private int? directions = null;
+    private Student student;
+    private int totalSeconds = 10;
 
     protected override async Task OnInitializedAsync()
     {
-        var student = StudentService.GetTargetStudent();
+        student = StudentService.GetTargetStudent();
         directions = student.Directions;
+
+        timer = new System.Timers.Timer(1000);
+        timer.Elapsed += CountDownTimer;
+        timer.Enabled = true;
+
     }
 
     private async void OnNextClicked()
     {
-        NavManager.NavigateTo("/readingPage");    
+        if (student.Directions == 0)
+            NavManager.NavigateTo("/readingPage");
+        else
+            NavManager.NavigateTo("/readingPageBats");
+    }
+
+    public void CountDownTimer(Object source, System.Timers.ElapsedEventArgs e)
+    {
+        totalSeconds--;
+        if(totalSeconds <= 0)
+        {
+            timer.Enabled = false;
+            timer.Dispose();
+        }
+        InvokeAsync(StateHasChanged); // updates webpage
     }
 }

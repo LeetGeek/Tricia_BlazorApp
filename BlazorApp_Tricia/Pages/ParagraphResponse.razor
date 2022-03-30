@@ -6,16 +6,18 @@
 @inject IJSRuntime JsRuntime
 
 
-   
-    <div style="text-align: center;">
+   <div style="margin-left:50px; margin-right:50px">
+        <div style="text-align: center;">
         <span><label>Remaining Time: </label> @timeDisplay</span>
-    </div>
-    <br />
+        </div>
+        <br />
 
-    <p>In a standard 5 paragraph essay, please answer the following prompt:</p>
-    <p>Explain how alcohol is produced in alcoholic beverages and the factors that may alter the amount of alcohol produced.</p>
-    <br />
-    <textarea name="paragraph_text" cols="200" rows="30" @bind="@responseText" @bind:event="oninput"></textarea>
+        <p>In a standard 5 paragraph essay, please answer the following prompt:</p>
+        <p>Explain how alcohol is produced in alcoholic beverages and the factors that may alter the amount of alcohol produced.</p>
+        <br />
+        <textarea name="paragraph_text" cols="200" rows="30" @bind="@responseText" @bind:event="oninput"></textarea>
+   </div>
+   
 
     @*<button @onclick="OnNext">Next</button>*@
 
@@ -30,15 +32,21 @@
     private string timeDisplay = "";
 
     private int minutes = 0;
-    private int seconds = 20;
+    private int seconds = 0;
     private int totalSeconds;
 
+    private Student student;
     private string responseText;
 
-    private Student student;
 
-    protected override async Task OnInitializedAsync()
+    protected override Task OnInitializedAsync()
     {
+        var data = WebsiteService.GetWebsiteData();
+        var tokens = data.ParagraphTotalTime.Split(new char[] { ':' });
+        minutes = int.Parse(tokens[0]);
+        seconds = int.Parse(tokens[1]);
+        
+
         totalSeconds = minutes * 60 + seconds;
 
         timer = new System.Timers.Timer(1000);
@@ -47,9 +55,8 @@
 
         student = StudentService.GetTargetStudent();
 
-
+        return base.OnInitializedAsync();
     }
-
 
     public void CountDownTimer(Object source, System.Timers.ElapsedEventArgs e)
     {

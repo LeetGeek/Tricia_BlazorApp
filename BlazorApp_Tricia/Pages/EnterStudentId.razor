@@ -7,10 +7,14 @@
 @inject IJSRuntime JsRuntime
 
 @*left padding*@
-<label>     PIN:</label>
+<div style="margin-left:50px; margin-right:50px">
 
-<input @bind="studentId"/>
-<button @onclick="SubmitId">Submit</button>
+    <label>     PIN:</label>
+
+    <input @bind="studentId"/>
+    <button @onclick="SubmitId">Submit</button>
+</div>
+
 
 
 

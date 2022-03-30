@@ -1,4 +1,4 @@
-﻿@page "/questionPage2/{questionNumberString}"
+﻿@page "/questionPageBats/{questionNumberString}"
 @using BlazorApp_Tricia.Data
 @inject QuestionService QuestionService
 @inject NavigationManager NavManager
@@ -6,36 +6,44 @@
 @inject IJSRuntime JsRuntime
 
 
-<div style="margin-left:50px; margin-right:50px">
 
-@if(questions == null)
-{
-    <p><em>Loading...</em></p>
-}
-else
-{
-    var questionId = 0;
-    @foreach(var question in questions)
+
+
+<div style="margin-left:50px; margin-right:50px">
+     <p style="text-align: center;"><u>EXAMPLE TEST QUESTIONS</u></p>
+
+
+
+    @if(questions == null)
     {
-        var anwserIndex = 0;
-        var anwserId = $"A{anwserIndex}";
-        
-        <div>
-            <p>@question.QuestionText</p>
-            <div>
-                <fieldset>
-                @foreach(var answer in @question.Answers)
-                {
-                    <input type="radio" name="@question.QuestionId" @onchange="args=>SelectedAnswerChanged(question,args)" value="@answer" />
-                    <label>@answer</label>
-                    <br>
-                }
-                </fieldset>
-            </div>
-        </div>
-        <br>
+        <p><em>Loading...</em></p>
     }
-    <button @onclick="OnNext">Next</button>
+    else
+    {
+        var questionId = 0;
+        @foreach(var question in questions)
+        {
+            var anwserIndex = 0;
+            var anwserId = $"A{anwserIndex}";
+        
+            <div>
+               
+                <p>@question.QuestionText</p>
+                <div>
+                    <fieldset>
+                    @foreach(var answer in @question.Answers)
+                    {
+                        <input type="radio" name="@question.QuestionId" @onchange="args=>SelectedAnswerChanged(question,args)" value="@answer" />
+                        <label>@answer</label>
+                        <br>
+                    }
+                    </fieldset>
+                </div>
+            </div>
+            <br>
+        }
+        <button @onclick="OnNext">Next</button>
+    
 }
 </div>
 
@@ -60,7 +68,7 @@ else
         questionNumber = int.Parse(questionNumberString);
 
         student = StudentService.GetTargetStudent();
-        questions = QuestionService.Questions.Skip(questionNumber*5).Take(5).OrderBy(o=>o.QuestionId);
+        questions = QuestionService.BatQuestions.Skip(questionNumber*2).Take(2);
 
     }
 
@@ -74,9 +82,7 @@ else
 
     private async void OnNext()
     {
-        var startingQuestions = student.Directions == 0 ? 0 : 2;
-
-        if(student.Answers.Keys.Count < startingQuestions + (questionNumber+1)*5)
+        if(student.Answers.Keys.Count < 2)
         {
             await JsRuntime.InvokeVoidAsync("alert", "Please ensure that you have answered all of the questions before proceeding.");
             return;
@@ -87,19 +93,21 @@ else
         var questionId = questions.FirstOrDefault()?.QuestionId;
         student.Stats[$"{questionId.Substring(0,questionId.Length-1)}"] = totalMilliseconds;
         StudentService.SaveStudent(student);
-        
-        if(questionNumber == 2)
-        {
-            NavManager.NavigateTo("/thankyou");  
-        }
-        else
-        {
 
-            questionNumber++;
-            //questions = QuestionService.Questions.Skip(questionNumber*5).Take(5);
-            //InvokeAsync(StateHasChanged);
-            NavManager.NavigateTo($"/questionPage2/{questionNumber}",true);
-        }
+        NavManager.NavigateTo("/readingPage"); 
+
+        //if(questionNumber == 1)
+        //{
+             
+        //}
+        //else
+        //{
+
+        //    questionNumber++;
+        //    //questions = QuestionService.Questions.Skip(questionNumber*5).Take(5);
+        //    //InvokeAsync(StateHasChanged);
+        //    NavManager.NavigateTo($"/questionPageBats/{questionNumber}",true);
+        //}
 
         
     }

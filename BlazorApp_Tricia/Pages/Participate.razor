@@ -12,6 +12,7 @@
 @*left padding*@
 @if(!noSelected)
 {
+<div style="margin-left:50px; margin-right:50px">
 <div style="text-align: center;"><strong>University of Illinois at Chicago<br>
 Research Information and Consent for Participation in Social, Behavioral, or Educational Research<br>
 2019-0820<br>
@@ -132,13 +133,15 @@ I have read the above information. &nbsp;I have been given an opportunity to con
     <button @onclick="YesButtonClicked">Yes</button>
     <button @onclick="NoButtonClicked">No</button>
 </div>
+</div>
 }
 else
 {
+    <div style="margin-left:50px; margin-right:50px">
     <p>
         Be sure to cancel your intent to participate in PECOLSUS or contact the researcher (<a href="tguerr9@uic.edu">tguerr9@uic.edu</a>).
     </p>
-
+    </div>
 
 }
 

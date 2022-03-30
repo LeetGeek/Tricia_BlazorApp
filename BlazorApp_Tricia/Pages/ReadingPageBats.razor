@@ -1,0 +1,63 @@
+﻿@page "/readingPageBats"
+
+@inject NavigationManager NavManager
+@inject StudentService StudentService
+@inject WebsiteService WebsiteService
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    .imgbox {
+        display: grid;
+        height: 70%;
+    }
+    .center-fit {
+        max-width: 70%;
+        max-height: 70vh;
+        margin: auto;
+    }
+</style>
+
+
+
+<div style="margin-left:50px; margin-right:50px">
+    <p style="text-align: center;"><u>EXAMPLE TEXT</u></p>
+
+    <p style="text-align: center;">When you have finished reading the text, <br />
+click the next button.
+</p>
+
+    <div class="imgbox">
+        <img class="center-fit" src="img/Bats_Text.jpg">
+    </div> 
+    <br />
+    <button @onclick="OnNextClicked">Next</button>
+</div>
+
+
+
+@code {
+    private System.Diagnostics.Stopwatch stopwatch;
+    private Student student;
+
+
+    protected override Task OnInitializedAsync()
+    {
+        student = StudentService.GetTargetStudent();
+        stopwatch = new System.Diagnostics.Stopwatch();
+        stopwatch.Start();
+        return base.OnInitializedAsync();
+    }
+    private async void OnNextClicked()
+    {
+        student.Stats["Bats"] = stopwatch.Elapsed.TotalMilliseconds;
+        NavManager.NavigateTo($"/questionPageBats/{student.Directions-1}"); 
+    }
+    
+
+    public void Dispose()
+    {
+        
+    }
+}

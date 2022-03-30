@@ -39,7 +39,8 @@ var questionService = app.Services.GetService<QuestionService>();
 
 websiteService?.Init(connectionString);
 studentService?.Init(connectionString);
-questionService.Load("./data/Questions.json");
+questionService?.LoadQuestions("./data/Questions.json");
+questionService?.LoadBatQuestions("./data/BatQuestions.json");
 app.Run();
 
 
